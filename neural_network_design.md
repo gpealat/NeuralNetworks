@@ -55,3 +55,9 @@ In case of multi lable classification, the choice is similat to multi class clas
 
 ### Hidden layer
 
+There are no rules for the hidden layers. You can only follow conventions that seem to work well in practice:
+- 1 to 5 hidden layers seem to work well in practice
+- 1 to 100 neurons by layers seem to be a standard (there is generally more improvements by adding hidden layers than adding more neurons)
+- each hidden layers have generally the same number of neurons. When the input layer is large, you can have a first large hidden layer followed by smaller ones.
+
+
