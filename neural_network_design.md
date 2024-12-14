@@ -3,6 +3,8 @@
 Designing a neural network requests the data scientist to make multiple choices: design of the layers, choice of the activation functions, hyper parameters...<br>
 This guide is a collection of reflection on the subject in order to give the reader a simple guide to follow.
 
+Some of the tips have been extracted from this article: https://towardsdatascience.com/designing-your-neural-networks-a5e4617027ed
+
 In tensorflow/keras, you can create a neural network model using the Sequential function
 
 ```
