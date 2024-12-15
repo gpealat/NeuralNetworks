@@ -60,4 +60,25 @@ There are no rules for the hidden layers. You can only follow conventions that s
 - 1 to 100 neurons by layers seem to be a standard (there is generally more improvements by adding hidden layers than adding more neurons)
 - each hidden layers have generally the same number of neurons. When the input layer is large, you can have a first large hidden layer followed by smaller ones.
 
+### Activation functions
 
+The activation functions will depend on the task you are trying to achieve:
+
+- **Regression:** 
+- **Binary Classification:** You are trying to decide one class out of 2. You need to determine a probability of being in one of those class. Sigmoid activation function seems a good choice.
+- **Multi class classifcation:** Your target is to determine one class out of N. The sum of probability for all classes should be 1. Under those constrains, the only activation function you can use is softmax.
+- **Multi label classification:** In this case, the sum of probablity should not be equal to 1. You are trying to decide if your input is from any of the classes of choice. In this case, you cannot use softmax, so you will use the sigmoid activation function.
+
+### Loss functions
+
+As for the activation function, the choice of the loss function is dependent of the task:
+
+- **Regression:** The standard choice is the MSE (Mean Root Squared Error). If there are outliers, you can use MAE (Mean Absolute Error) or the Huber loss.
+  ```
+  from tensorflow.keras.losses import MeanSquaredError, AbsolulteMeanError, Huber
+  ```
+- **Binary Classification:** For classification tasks, the cross entropy error is the by default choice. In the case of binary classification, you use the Binary Cross Entropy.
+  ```
+  from tensorflow.keras.losses import BinaryCrossEntropy
+  ```
+- **Classification**: In this case, you will chose the Cross Entropy. 
